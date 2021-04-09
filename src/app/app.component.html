@@ -1,0 +1,22 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div>
+  <table>
+    <tr *ngFor="let row of dataGrid; index as i">
+      <td
+        *ngFor="let cell of row; index as j"
+        [ngClass]="{'highlight': cell.isSelected}"
+        (click)="cellClickHandler(i,j)"
+        (keyup.enter)="evaluate(cell)"
+      >
+        <div *ngIf="!cell.isSelected">
+          {{cell.value}}
+        </div>
+        <div *ngIf="cell.isSelected">
+          <input [(ngModel)]="cell.value" />
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <p>To get sum write comma separated cell name, like: a0,a1,a3</p>
+</div>

@@ -1,0 +1,13 @@
+div {
+  text-align: center;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+.highlight {
+  background-color: gray;
+}
